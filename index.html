@@ -3,68 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Will You Be My Valentine?</title>
+    <title>Be My Valentine?</title>
     <style>
         body {
             text-align: center;
             font-family: Arial, sans-serif;
             background-color: #ffe6e6;
         }
-        #container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
+        h1 {
+            color: #ff4d4d;
         }
         #sloth {
-            width: 150px; /* Adjust size if needed */
+            font-size: 100px; /* Makes the sloth emoji big */
+            transition: 0.5s;
         }
-        #buttons {
+        .btn-container {
             margin-top: 20px;
         }
         button {
-            font-size: 18px;
+            font-size: 20px;
             padding: 10px 20px;
             margin: 10px;
             border: none;
             cursor: pointer;
-            border-radius: 10px;
+            border-radius: 5px;
         }
         #yes {
             background-color: #ff4d4d;
             color: white;
         }
         #no {
-            background-color: #666;
+            background-color: #808080;
             color: white;
             position: absolute;
         }
     </style>
 </head>
 <body>
+    <h1>Will you be my Valentine, darling? 🩷</h1>
+    
+    <!-- Sloth Emoji -->
+    <p id="sloth">🦥</p>
 
-    <div id="container">
-        <h1>Will You Be My Valentine, Darling? ❤</h1>
-        <img id="sloth" src="https://github.com/0blesson0/Valentine-sloth/blob/main/sloth-heart.png?raw=true" alt="Cute Sloth">
-        <div id="buttons">
-            <button id="yes" onclick="showHeart()">Yes</button>
-            <button id="no" onmouseover="moveButton()">No</button>
-        </div>
+    <!-- Yes & No Buttons -->
+    <div class="btn-container">
+        <button id="yes" onclick="showHeart()">Yes</button>
+        <button id="no" onmouseover="moveNo()">No</button>
     </div>
 
     <script>
-        function moveButton() {
-            var x = Math.random() * window.innerWidth * 0.8;
-            var y = Math.random() * window.innerHeight * 0.8;
-            document.getElementById("no").style.left = x + "px";
-            document.getElementById("no").style.top = y + "px";
+        function showHeart() {
+            document.getElementById("sloth").innerHTML = "🦥🩷"; // Adds a heart next to sloth
         }
 
-        function showHeart() {
-            document.getElementById("sloth").src = "https://i.postimg.cc/gkqj9xSz/sloth-heart.png";
+        function moveNo() {
+            let button = document.getElementById("no");
+            let x = Math.random() * (window.innerWidth - 100);
+            let y = Math.random() * (window.innerHeight - 100);
+            button.style.left = x + "px";
+            button.style.top = y + "px";
         }
     </script>
-
 </body>
 </html>
