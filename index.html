@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Be My Valentine?</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-color: #ffe4e1;
+        }
+        h1 {
+            font-size: 24px;
+            color: #d63384;
+        }
+        #sloth {
+            width: 150px;
+            display: block;
+            margin: 10px auto;
+            transition: transform 0.3s ease-in-out;
+        }
+        #buttons {
+            margin-top: 20px;
+        }
+        .btn {
+            padding: 10px 20px;
+            font-size: 18px;
+            border: none;
+            cursor: pointer;
+            margin: 10px;
+            border-radius: 10px;
+        }
+        #yes {
+            background-color: #ff69b4;
+            color: white;
+        }
+        #no {
+            background-color: #ff4d4d;
+            color: white;
+            position: absolute;
+        }
+        .heart {
+            font-size: 50px;
+            display: none;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Will you be my Valentine, darling? 💖</h1>
+    <div>
+        <span class="heart">🩷</span>
+        <img id="sloth" src="https://i.imgur.com/ThsFi53.png" alt="Cute Sloth">
+    </div>
+    
+    <div id="buttons">
+        <button id="yes" class="btn">Yes</button>
+        <button id="no" class="btn">No</button>
+    </div>
+
+    <script>
+        let noButton = document.getElementById("no");
+        let yesButton = document.getElementById("yes");
+        let heart = document.querySelector(".heart");
+
+        noButton.addEventListener("mouseover", function() {
+            let x = Math.random() * (window.innerWidth - 100);
+            let y = Math.random() * (window.innerHeight - 100);
+            noButton.style.left = x + "px";
+            noButton.style.top = y + "px";
+        });
+
+        yesButton.addEventListener("click", function() {
+            heart.style.display = "block";
+        });
+    </script>
+
+</body>
+</html>
