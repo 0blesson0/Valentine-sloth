@@ -3,66 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Be My Valentine?</title>
-    <style>
-        body {
-            text-align: center;
-            font-family: Arial, sans-serif;
-            background-color: #ffe6e6;
-        }
-        h1 {
-            color: #ff4d4d;
-        }
-        #sloth {
-            font-size: 100px; /* Makes the sloth emoji big */
-            transition: 0.5s;
-        }
-        .btn-container {
-            margin-top: 20px;
-        }
-        button {
-            font-size: 20px;
-            padding: 10px 20px;
-            margin: 10px;
-            border: none;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-        #yes {
-            background-color: #ff4d4d;
-            color: white;
-        }
-        #no {
-            background-color: #808080;
-            color: white;
-            position: absolute;
-        }
-    </style>
+    <title>Will You Be My Valentine?</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Will you be my Valentine, darling? 🩷</h1>
-    
-    <!-- Sloth Emoji -->
-    <p id="sloth">🦥</p>
-
-    <!-- Yes & No Buttons -->
-    <div class="btn-container">
-        <button id="yes" onclick="showHeart()">Yes</button>
-        <button id="no" onmouseover="moveNo()">No</button>
+    <div class="container">
+        <h1>Will you be my Valentine?</h1>
+        <div class="buttons">
+            <button class="yes-button" onclick="handleYesClick()">Yes</button>
+            <button class="no-button" onclick="handleNoClick()">No</button>
+        </div>
+        <div class="gif_container">
+            <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExbW5lenZyZHI5OXM2eW95b3pmMG40cWVrMDhtNjVuM3A4dGNxa2g2dSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/VM1fcpu2bKs1e2Kdbj/giphy.gif" alt="Cute GIF">
+        </div>
     </div>
-
-    <script>
-        function showHeart() {
-            document.getElementById("sloth").innerHTML = "🦥🩷"; // Adds a heart next to sloth
-        }
-
-        function moveNo() {
-            let button = document.getElementById("no");
-            let x = Math.random() * (window.innerWidth - 100);
-            let y = Math.random() * (window.innerHeight - 100);
-            button.style.left = x + "px";
-            button.style.top = y + "px";
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
