@@ -34,16 +34,6 @@
         .hidden {
             display: none;
         }
-        @keyframes floatHearts {
-            0% { transform: translateY(0); opacity: 1; }
-            100% { transform: translateY(-100vh); opacity: 0; }
-        }
-        .heart {
-            position: absolute;
-            font-size: 24px;
-            color: #ff4d6d;
-            animation: floatHearts 5s linear infinite;
-        }
         .gif_container {
             margin-top: 20px;
         }
@@ -54,30 +44,32 @@
         <h1>Will You Be My Valentine?</h1>
         <div class="buttons">
             <button class="yes-button" onclick="showLove()">Yes</button>
-            <button class="no-button" onclick="alert('Oh no! Think again! 😢')">No</button>
+            <button class="no-button" onclick="handleNoClick()" style="font-size: 18px;">No</button>
         </div>
         <div class="gif_container">
             <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExbW5lenZyZHI5OXM2eW95b3pmMG40cWVrMDhtNjVuM3A4dGNxa2g2dSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/VM1fcpu2bKs1e2Kdbj/giphy.gif" alt="Cute GIF">
         </div>
-        <div id="surprise" class="hidden">
-            <h2>Yay! ❤️ Happy Valentine's Day!</h2>
-            <img src="https://media.giphy.com/media/l0HlNaQ6gWfllcjDO/giphy.gif" alt="Heart GIF" width="200">
-        </div>
     </div>
     <script>
-        function showLove() {
-            document.getElementById('surprise').classList.remove('hidden');
+        let noClickCount = 0;
+        const noMessages = [
+            "Oh no! Think again! 😢",
+            "Are you sure? 🥺",
+            "Please reconsider! 💔",
+            "Last chance! 😭",
+            "You can't say no! 😈"
+        ];
+        
+        function handleNoClick() {
+            const noButton = document.querySelector('.no-button');
+            if (noClickCount < noMessages.length) {
+                alert(noMessages[noClickCount]);
+                noButton.style.fontSize = (parseFloat(window.getComputedStyle(noButton).fontSize) * 0.8) + "px";
+                noClickCount++;
+            } else {
+                noButton.style.display = 'none';
+            }
         }
-        function createHeart() {
-            const heart = document.createElement('div');
-            heart.innerHTML = '❤️';
-            heart.classList.add('heart');
-            heart.style.left = Math.random() * 100 + 'vw';
-            heart.style.animationDuration = Math.random() * 3 + 2 + 's';
-            document.body.appendChild(heart);
-            setTimeout(() => heart.remove(), 5000);
-        }
-        setInterval(createHeart, 500);
     </script>
 </body>
 </html>
