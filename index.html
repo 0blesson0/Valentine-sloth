@@ -44,13 +44,21 @@
             color: #ff4d6d;
             animation: floatHearts 5s linear infinite;
         }
+        .gif_container {
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Will You Be My Valentine?</h1>
-        <button onclick="showLove()">Yes</button>
-        <button onclick="alert('Oh no! Think again! 😢')">No</button>
+        <div class="buttons">
+            <button class="yes-button" onclick="showLove()">Yes</button>
+            <button class="no-button" onclick="alert('Oh no! Think again! 😢')">No</button>
+        </div>
+        <div class="gif_container">
+            <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExbW5lenZyZHI5OXM2eW95b3pmMG40cWVrMDhtNjVuM3A4dGNxa2g2dSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/VM1fcpu2bKs1e2Kdbj/giphy.gif" alt="Cute GIF">
+        </div>
         <div id="surprise" class="hidden">
             <h2>Yay! ❤️ Happy Valentine's Day!</h2>
             <img src="https://media.giphy.com/media/l0HlNaQ6gWfllcjDO/giphy.gif" alt="Heart GIF" width="200">
@@ -73,4 +81,3 @@
     </script>
 </body>
 </html>
-
